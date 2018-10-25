@@ -1,12 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>Welcome, {{userName}}!</h1>
-
-<form>
-  <input [(ngModel)]="userName" type="text" name="user">
-</form>
-
-
-
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -15,15 +6,7 @@
 
 <div class="container">
   <h3>Recipes:</h3>
-  <ol>
-    <li [class]="deliciousnessColor(recipe)" *ngFor="let recipe of recipes"><span class="bold">{{recipe.name}}</span>  <button (click)="editRecipe(recipe)">Edit!</button>
-      <ul>
-        <li>Ingredients: {{recipe.ingredients}}</li>
-        <li>Directions: {{recipe.directions}}</li>
-      </ul>
-      <br>
-    </li>
-  </ol>
+  <app-recipe-list [childRecipeList]="MasterRecipesList" (clickSender)="editRecipe($event)"></app-recipe-list>
 </div>
 
 <div *ngIf="selectedRecipe">

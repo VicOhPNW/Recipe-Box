@@ -1,3 +1,8 @@
-<p>
-  recipe-list works!
-</p>
+<ol>
+  <li [class]="deliciousnessColor(recipe)" *ngFor="let recipe of childRecipeList"><span class="bold">{{recipe.name}}</span>  <button (click)="editButtonClicked(recipe)">Edit!</button>
+    <ul>
+      <li>Ingredients: {{recipe.ingredients}}</li>
+      <li>Directions: {{recipe.directions}}</li>
+    </ul>
+  </li>
+</ol>
