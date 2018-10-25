@@ -1,3 +1,23 @@
-<p>
-  new-recipe works!
-</p>
+<h1>New Recipe</h1>
+<div>
+ <label>Enter recipe name:</label>
+ <input #newName>
+</div>
+<div>
+<label>Enter recipe ingredients:</label>
+<input #newIngredients>
+</div>
+<div>
+<label>Enter recipe directions:</label>
+<input #newDirections>
+</div>
+
+<div>
+  <label>Recipe Deliciousness:</label>
+  <select #newDeliciousness>
+    <option [value]="1">1 (Disgusting)</option>
+    <option [value]="2">2 (Neutral)</option>
+    <option [value]="3">3 (Delicious)</option>
+  </select>
+  <button (click)="submitForm(newName.value, newIngredients.value, newDirections.value, newDeliciousness.value); newIngredients.value='';">Add</button>
+</div>

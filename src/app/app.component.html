@@ -11,3 +11,5 @@
 
 
 <app-edit-recipe [childSelectedRecipe]="selectedRecipe" (clickedDone)="finishedEditing()"></app-edit-recipe>
+
+<app-new-recipe (sendTask)="addRecipe($event)"></app-new-recipe>
